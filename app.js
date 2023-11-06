@@ -70,7 +70,7 @@ const calcularLlamadasASumar = (totalAte, totalDer, obj, der) => {
     let accLlamadas;
 
     for (let i = 0; derivadasInicial > obj; i++) {
-        derivadasInicial = calcularReingreso(totalAtendidasInicial, totalDer);
+        derivadasInicial = calcularDerivaciones(totalAtendidasInicial, totalDer);
         totalAtendidasInicial++;
         accLlamadas = i;
     }
