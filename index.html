@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Css -->
+    <link rel="stylesheet" href="main.css">
+    <title>Calculadora Derivaciones</title>
+</head>
+<body>
+    <div class="tittle-container">
+        <h1>Calculadora Derivaciones</h1>
+    </div>
+
+    <div class="app-container">
+
+        <div class="front-container">
+
+            <div class="form-container container-objetivoMovil">
+                <div class="form-tittle form-tittle-objetivo">
+                    <h2>OBJETIVO</h2>
+                </div>
+                
+                <div class="input-container">
+                    <input id="input-objetivo" type="number" inputmode="numeric" placeholder="Ingresa tu % de objetivo">
+                </div>
+            </div>
+
+            <div class="form-container container-atendidas">
+                <div class="form-tittle form-tittle-atendidas">
+                    <h2>ATENDIDAS</h2>
+                </div>
+                
+                <div class="input-container">
+                    <input id="input-atendidas" type="number" inputmode="numeric" placeholder="Cantidad de llamadas atendidas">
+                </div>
+            </div>
+
+            <div class="form-container container-reingresadas">
+                <div class="form-tittle form-tittle-reingresadas">
+                    <h2>DERIVADAS</h2>
+                </div>
+                
+                <div class="input-container">
+                    <input id="input-reingresadas" type="number" inputmode="numeric" placeholder="Cantidad de llamadas derivadas">
+                </div>
+            </div>
+
+        </div>
+
+        <div class="back-container">
+            <div class="card">
+                <div class="container-titulo-card">
+                    <p class="titulo-card"></p>
+                </div>
+
+                <div class="container-desempenio">
+
+                    <p class="desempenio">Tu desempeño es del:</p>
+                    <div class="container-porcentaje">
+                        <p class="porcentaje"></p>
+                    </div>
+
+                </div>
+
+                <div class="container-objetivo">
+                    <p id="mensaje"></p>
+                    <p id="mensaje-objetivo"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="button-container">
+        
+        <button id="calc-button" class="calc-button"><span id="calcular">Calcular</span><span id="cerrado" class="inactive">X</span></button>
+
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>
