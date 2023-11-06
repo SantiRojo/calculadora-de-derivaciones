@@ -103,8 +103,8 @@ inputAtendidas.addEventListener('input', () => {
     totalAtendidas = parseInt(inputAtendidas.value); 
 });
 
-inputReingresadas.addEventListener('input', () => {
-    totalReingresadas = parseInt(inputReingresadas.value);
+inputDerivadas.addEventListener('input', () => {
+    totalDerivadas = parseInt(inputDerivadas.value);
 });
 
 calcButton.addEventListener('click', () => {
