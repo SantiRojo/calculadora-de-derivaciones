@@ -109,7 +109,7 @@ inputDerivadas.addEventListener('input', () => {
 
 calcButton.addEventListener('click', () => {
 
-    derivaciones = calcularReingreso(totalAtendidas, totalDerivadas);
+    derivaciones = calcularDerivaciones(totalAtendidas, totalDerivadas);
 
     if(derivaciones > objetivoMovil){
         llamadasASumar = calcularLlamadasASumar(totalAtendidas, totalDerivadas, objetivoMovil,derivaciones);
