@@ -4,7 +4,7 @@ const backContainer = document.querySelector('.back-container');
 /*Inputs de calificaciones*/
 const inputObjetivo = document.querySelector('#input-objetivo');
 const inputAtendidas = document.querySelector('#input-atendidas');
-const inputReingresadas = document.querySelector('#input-reingresadas');
+const inputDerivadas = document.querySelector('#input-derivadas');
 
 
 const containerTituloDesempenio = document.querySelector('.container-titulo-card');
@@ -21,8 +21,8 @@ const cerrar = document.querySelector('#cerrado');
 
 let objetivoMovil;
 let totalAtendidas;
-let totalReingresadas;
-let reingreso;
+let totalDerivadas;
+let derivaciones;
 let desempenio;
 
 const resultados = [
@@ -60,17 +60,17 @@ const resultados = [
     }
 ];
 
-const calcularReingreso = (total, rein) => {
-    return parseFloat((rein * 100) / total).toFixed(2);
+const calcularDerivaciones = (total, der) => {
+    return parseFloat((der * 100) / total).toFixed(2);
 }
 
-const calcularLlamadasASumar = (totalIn, totalRein, obj, rein) => {
-    let totalAtendidasInicial = totalIn;
-    let reingresoInicial = rein;
+const calcularLlamadasASumar = (totalAte, totalDer, obj, der) => {
+    let totalAtendidasInicial = totalAte;
+    let derivadasInicial = der;
     let accLlamadas;
 
-    for (let i = 0; reingresoInicial > obj; i++) {
-        reingresoInicial = calcularReingreso(totalAtendidasInicial, totalRein);
+    for (let i = 0; derivadasInicial > obj; i++) {
+        derivadasInicial = calcularReingreso(totalAtendidasInicial, totalDer);
         totalAtendidasInicial++;
         accLlamadas = i;
     }
@@ -79,8 +79,8 @@ const calcularLlamadasASumar = (totalIn, totalRein, obj, rein) => {
 
 }
 
-const calcularDesempenio = (rein, obj) => {
-    return (parseFloat(((obj - rein) / obj) + 1) *100).toFixed(2);
+const calcularDesempenio = (der, obj) => {
+    return (parseFloat(((obj - der) / obj) + 1) *100).toFixed(2);
 }
 
 const filtrarResultadoMetrica = (des) => {
@@ -109,17 +109,17 @@ inputReingresadas.addEventListener('input', () => {
 
 calcButton.addEventListener('click', () => {
 
-    reingreso = calcularReingreso(totalAtendidas, totalReingresadas);
+    derivaciones = calcularReingreso(totalAtendidas, totalDerivadas);
 
-    if(reingreso > objetivoMovil){
-        llamadasASumar = calcularLlamadasASumar(totalAtendidas, totalReingresadas, objetivoMovil,reingreso);
+    if(derivaciones > objetivoMovil){
+        llamadasASumar = calcularLlamadasASumar(totalAtendidas, totalDerivadas, objetivoMovil,derivaciones);
 
         mensajeObjetivo.innerText = `Sumá ${llamadasASumar} llamadas y alcanzá el objetivo`;
     } else {
         mensajeObjetivo.innerText = 'Estás en objetivo';
     }
 
-    desempenio = calcularDesempenio(reingreso, objetivoMovil);
+    desempenio = calcularDesempenio(derivaciones, objetivoMovil);
 
     resultadoMetrica = filtrarResultadoMetrica(desempenio);
 
